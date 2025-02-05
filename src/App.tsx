@@ -1,16 +1,21 @@
-import style from "./App.module.css"
-import Navbar from "./components/navbar/Navbar.tsx"
-import ApiExito from "./components/ApiExito/ApiExito.tsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import CartMenu from "./components/cartMenu/CartMenu.tsx"
+import AppMutual from "./components/appMutual/AppMutual.tsx"
+
 
 const App = () => {
 
   return (
-    <div className={style.home}>
-      <Navbar />
-      <ApiExito />
-      {/* <Card /> */}
-    </div>
-  )
-}
+    <BrowserRouter>
+       <Routes>
+          <Route path="/" element={<AppMutual />} />
+          <Route path="/CartMenu" element={<CartMenu/>} />
+          <Route path="/AppMutual" element={<AppMutual />} />
+          
+       </Routes>
+    </BrowserRouter>
+   
+  );
+};
 
-export default App
+export default App 

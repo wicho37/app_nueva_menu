@@ -1,4 +1,12 @@
-.home{
+*{
     margin: 0%;
     padding: 0%;
 }
+/* .home{
+    background-image: url("./assets/img/img_Ppal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 376px;
+    height: 693px;
+} */

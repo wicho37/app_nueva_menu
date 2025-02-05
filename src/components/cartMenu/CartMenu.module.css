@@ -1,0 +1,19 @@
+/* .alimento{
+    margin-top: 158px;
+    margin-left: 100px;
+    background-color: #4c7aafad;
+    color: white;
+    border: none;
+    padding: 14px 33px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+.alimento:hover {
+    background-color: #15d863d1;
+    transform: scale(1.05); 
+    transition: 0.3s; 
+  }
+   */
