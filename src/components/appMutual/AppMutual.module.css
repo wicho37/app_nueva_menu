@@ -1,0 +1,21 @@
+.principal{
+    background-image: url("../../assets/img/img_Ppal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 694px;
+}
+.botonPpal{
+    font-size: 36px;
+    margin: 79px;
+    text-decoration: none;
+    background-color: dimgray;
+    border-radius: 61px;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+.boton{
+    margin-top: 200px;
+    position: absolute;
+    
+}

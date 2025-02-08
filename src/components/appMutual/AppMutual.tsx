@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom"
+import estilo from "../appMutual/AppMutual.module.css"
 
 
 const AppMutual = () => {
 
   return (
-    <div>
-      <h1> my menu</h1>
-      <Link to="/cartMenu">empezar</Link>
+    <div className={estilo.principal}>
+      <div className={estilo.boton}>
+        <Link to="/cartMenu" className={estilo.botonPpal}>empezar</Link>
+      </div>
     </div>
   )
 }
 
-export default AppMutual  
+export default AppMutual;
