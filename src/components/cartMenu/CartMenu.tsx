@@ -1,22 +1,28 @@
-//import { useEffect } from "react";
 import { Link } from "react-router-dom";
- // import {data} from "../../assets/MOCK_DATA/dataMenu"
+import { menu } from "../../assets/MOCK_DATA/dataMenu"
  import style from "./CartMenu.module.css"
 
 
-const CartMenu = () => {
- /* useEffect (() => {
-    
-  }, [])
 
-   const [productos, setProductos] = useState([])
-    console.log(productos)
-  const producto = data.find(item => item.id === 1); */
+const CartMenu = () => {
+  
 
   return (
     <div  className={style.imgPpal}>
-      <h1>Información del producto</h1>
-      <Link to="/AppMutual">volver</Link>
+      <h1>tipos de menu</h1>
+        <Link to="/AppMutual">volver</Link>
+      <div>
+        {
+          menu?.map( menu => (
+            <li key={menu.id}>
+              {menu.id}
+              {menu.name}
+              {menu.description}
+            </li>
+          ))
+        }
+        <Link to="/SuperMercado">ir a supermercado</Link>
+      </div>
     </div>
   )
 }

@@ -17,4 +17,14 @@
     transition: 0.3s; 
   }
    */
+
+   .Cart{
+    margin: 57px;
+    text-align: center;
+    border: 5px solid;
+    border-radius: 33px;
+    list-style: none;
+    padding: 30px;
+   }
+   
    
