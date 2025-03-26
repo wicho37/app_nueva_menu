@@ -1,20 +1,20 @@
-import { useState,useEffect } from "react"
+//import { useState,useEffect } from "react"
 
 
-const ItemCart = (item) => {
-    const [ data, setData ] = useState (null)
+const ItemCart = (menu) => {
+    /* const [ data, setData ] = useState (null)
  
     useEffect(() => {
       fetch('https://fakestoreapi.com/products')
       .then((response) => response.json ())
       .then((data) => setData (data))
-  },[])
+  },[]) */
 
   return (
     <div>
-        <p>{item.category}</p>
-        <p>precio: {item.price}</p>
-        <p>{item.description}</p>
+        <p>{menu.category}</p>
+        <p>precio: {menu.price}</p>
+        <p>{menu.description}</p>
     </div>
   )
 }

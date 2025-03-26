@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { menu } from "../../assets/MOCK_DATA/dataMenu"
+import { menu  } from "../../assets/MOCK_DATA/dataMenu"
  import style from "./CartMenu.module.css"
 
 
 
 const CartMenu = () => {
-  
+ 
 
   return (
     <div  className={style.imgPpal}>
@@ -14,10 +14,22 @@ const CartMenu = () => {
       <div>
         {
           menu?.map( menu => (
-            <li key={menu.id}>
-              {menu.id}
-              {menu.name}
-              {menu.description}
+            <li key={menu.id} className={style.Cart}>
+              <Link to={`/ItemCart/${menu.id}`}>
+               <div>
+                {menu.id}
+              </div>
+              <div>
+                {menu.name}
+              </div>
+              <div>
+                {menu.description}
+              </div>
+              <div>
+                precio: ${menu.price}
+              </div>
+              </Link>
+             
             </li>
           ))
         }

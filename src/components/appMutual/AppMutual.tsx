@@ -7,7 +7,7 @@ const AppMutual = () => {
   return (
     <div className={estilo.principal}>
       <div className={estilo.boton}>
-        <Link to="/cartMenu" className={estilo.botonPpal}>empezar</Link>
+        <Link to="/supermercado" className={estilo.botonPpal}>empezar</Link>
       </div>
     </div>
   )

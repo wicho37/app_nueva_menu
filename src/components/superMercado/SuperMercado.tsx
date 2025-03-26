@@ -1,12 +1,10 @@
 import { useEffect, useState} from "react";
-import style from "./SuperMercado.module.css"
+import style from "../cartMenu/CartMenu.module.css"
 import { Link } from "react-router-dom";
 
 
 
-
-
-function SuperMercado() {
+function SuperMercado () {
     const [ data, setData ] = useState (null)
     console.log(data)
     
@@ -22,6 +20,7 @@ function SuperMercado() {
         <h2>SuperMercado</h2>
        <div>
        <Link to="/CartMenu">volver</Link>
+{/*        slice(0, 10) solo mustra los primeros diez productos del listado */}
           {
             data?.map((item) => ( 
             <li key={item.id} className={style.Cart}>
@@ -38,4 +37,35 @@ function SuperMercado() {
   )
 }
 
-export default SuperMercado
+export default SuperMercado 
+
+
+
+
+
+/* function SuperMercado ({menu}) {
+  console.log(menu)
+  return (
+    <div> 
+      <h1>supermercado online</h1>
+     <div>
+     <Link to="/CartMenu">volver</Link>
+      <ul>
+        {
+          menu?.map(menu => 
+            <li className={style.Cart}>
+              {menu.id}
+              {menu.name}
+              {menu.description}
+              {menu.bebida}
+            </li>
+          )
+        }
+      </ul>
+     </div>
+     <Link to="/CartMenu">volver</Link>
+    </div>
+  )
+}
+
+export default SuperMercado */
