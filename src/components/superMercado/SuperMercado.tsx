@@ -1,43 +1,57 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import style from "../cartMenu/CartMenu.module.css"
 import { Link } from "react-router-dom";
+import Header from "../header/Header";
 
 
 
-function SuperMercado () {
-    const [ data, setData ] = useState (null)
-    console.log(data)
-    
-    useEffect (() => {
-        fetch('https://fakestoreapi.com/products')
-        .then((response) => response.json ())
-        .then((data) => setData (data))
-    },[])
-       
+function SuperMercado() {
+  const [data, setData] = useState([])
+  console.log(data)
+  
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error al obtener productos:", error));
+  }, [])
+
 
   return (
     <div>
-        <h2>SuperMercado</h2>
-       <div>
-       <Link to="/CartMenu">volver</Link>
-{/*        slice(0, 10) solo mustra los primeros diez productos del listado */}
+      <Header />
+      <h2>SuperMercado</h2>
+      <div>
+        {/*        slice(0, 10) solo mustra los primeros diez productos del listado */}
+        <ul>
           {
-            data?.map((item) => ( 
-            <li key={item.id} className={style.Cart}>
-              <p>{item.id}</p>
-              <p>{item.category}</p>
-              <strong>{item.description}</strong>
-               <p>precio: {item.price}</p>
-            </li>
-            ))
-          }
-       </div> 
-       <Link to="/CartMenu">volver</Link>
+            data?.slice(0, 10).map((item) => {
+              
+              const shortDescription = item.description.split(".")[0] + "."; // Mostrar solo el primer párrafo
+              const shortTitle = item.title.split(".")[0] + ".";
+              return(
+              <li key={item.id} className={style.Cart}>
+                <Link to={`/product/${item.id}`}>
+                  <p>ID:{item.id}</p>
+                  <img src={item.image} alt={item.title} width={100} />
+                  <p>{shortTitle}</p>
+                  <p>{item.category}</p>
+                  <strong>{shortDescription}</strong>
+                  <p>precio: {item.price}</p>
+                </Link>
+                <button>añadir al carrito</button>
+              </li>
+              )
+           })}
+        </ul>
+      </div>
+      <Link to="/CartMenu">volver</Link>
     </div>
   )
 }
 
-export default SuperMercado 
+export default SuperMercado
 
 
 

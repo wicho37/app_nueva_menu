@@ -1,40 +1,46 @@
 import { Link } from "react-router-dom";
-import { menu  } from "../../assets/MOCK_DATA/dataMenu"
- import style from "./CartMenu.module.css"
+import { menu } from "../../assets/MOCK_DATA/dataMenu"
+import style from "./CartMenu.module.css"
+import Header from "../header/Header";
+import GoShopping from "../goShopping/GoShopping";
+
 
 
 
 const CartMenu = () => {
- 
+
 
   return (
-    <div  className={style.imgPpal}>
-      <h1>tipos de menu</h1>
-        <Link to="/AppMutual">volver</Link>
-      <div>
+    <div className={style.imgPpal}>
+      <Header />
+      <Link to="/SuperMercado">
+         <GoShopping />
+      </Link>
+      
+      <ul>
         {
-          menu?.map( menu => (
-            <li key={menu.id} className={style.Cart}>
-              <Link to={`/ItemCart/${menu.id}`}>
-               <div>
-                {menu.id}
-              </div>
-              <div>
-                {menu.name}
-              </div>
-              <div>
-                {menu.description}
-              </div>
-              <div>
-                precio: ${menu.price}
-              </div>
+          menu?.map((menuItem) => (
+            <li key={menuItem.id} className={style.Cart}>
+              <Link to={`/item/${menuItem.id}`}>
+                <div>
+                  {menuItem.id}
+                </div>
+                <div>
+                  {menuItem.name}
+                </div>
+                <div>
+                  {menuItem.description}
+                </div>
+                <div>
+                  precio: ${menuItem.price}
+                </div>
               </Link>
-             
+
             </li>
           ))
         }
-        <Link to="/SuperMercado">ir a supermercado</Link>
-      </div>
+      </ul>
+      <Link to="/SuperMercado">ir a supermercado</Link>
     </div>
   )
 }

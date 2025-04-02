@@ -1,13 +1,17 @@
-import Filters from "../filter/Filter"
+import Menulist from "../Menu/Menulist"
+import style from "./Header.module.css"
 
-const Header = ({changeFilters}) => {
+
+
+const Header = () => {
 
   return (
-    <header>
-         <div>  store Shop</div>
-            <Filters  onChange={changeFilters}  />
-    </header>
-   
+      <div className={style.header}>
+        <p className={style.cabecero}>comida para todos sus gustos</p>
+        <div>
+          <Menulist />
+        </div>
+      </div>
   )
 }
 

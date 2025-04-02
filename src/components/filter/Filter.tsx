@@ -1,4 +1,4 @@
-import { useState } from "react"
+/* import { useState } from "react"
 import style from "./Filter.module.css"
 
 
@@ -49,4 +49,4 @@ const Filters = ({onChange}) => {
   )
 }
 
-export default Filters
+export default Filters */
