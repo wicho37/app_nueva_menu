@@ -1,24 +1,4 @@
-/* .alimento{
-    margin-top: 158px;
-    margin-left: 100px;
-    background-color: #4c7aafad;
-    color: white;
-    border: none;
-    padding: 14px 33px;
-    text-align: center;
-    font-size: 22px;
-    cursor: pointer;
-    border-radius: 30px;
-    text-transform: uppercase;
-}
-.alimento:hover {
-    background-color: #15d863d1;
-    transform: scale(1.05); 
-    transition: 0.3s; 
-  }
-   */
-
-   .Cart{
+.Cart{
     margin: 57px;
     text-align: center;
     border: 5px solid;
@@ -30,5 +10,43 @@
     display: flex;
     gap: 203px;
    }
+   div ul{
+    padding: 0;
+    margin: 0;
+    background-color: bisque;
+    margin-left: -8px;
+    margin-top: -19.5px;
+    margin-right: -7px;
+   }
+   div ul h4{
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 29px;
+    font-size: 29px;
+   }
+   .btnContainer {
+    text-align: center;
+    margin-top: 70px;
+    padding-bottom: 50px;
+  }
+  .btnVerTodo {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .btnVerTodo:hover {
+    background-color: #c4411f;
+  }
+  .textPpal{
+    text-decoration: none;
+  }
+  .labels{
+    display: flex;
+    gap: 30px;
+  }
+  
    
    

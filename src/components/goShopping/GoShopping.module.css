@@ -1,7 +1,8 @@
 .container{ 
-    width: 100%;
-    height: 76vh;
-    margin: 0;
+    width: 104%;
+    height: 100vh;
+    margin-top: 118px;
+    margin-left: -7px;
     background-position: center;
     background-image: url("../../assets/img/alimento2.png");
 }

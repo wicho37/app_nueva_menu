@@ -11,19 +11,19 @@ const CartMenu = () => {
 
 
   return (
-    <div className={style.imgPpal}>
+    <div>
       <Header />
       <Link to="/SuperMercado">
-         <GoShopping />
+        <GoShopping />
       </Link>
-      
       <ul>
+        <h4>menu diario</h4>
         {
-          menu?.map((menuItem) => (
+          menu?.slice(0, 4).map((menuItem) => (
             <li key={menuItem.id} className={style.Cart}>
-              <Link to={`/item/${menuItem.id}`}>
+              <Link to={`/item/${menuItem.id}`} className={style.textPpal}>
                 <div>
-                  {menuItem.id}
+                  <img src={menuItem.image} alt={menuItem.name} width={100} />
                 </div>
                 <div>
                   {menuItem.name}
@@ -35,12 +35,21 @@ const CartMenu = () => {
                   precio: ${menuItem.price}
                 </div>
               </Link>
-
             </li>
           ))
         }
+        <div className={style.btnContainer}>
+          <Link to="/menu-completo" className={style.btnVerTodo}>
+            Ver Todo el Menú
+          </Link>
+        </div>
+        <div className={style.btnContainer}>
+           <Link to="/SuperMercado" className={style.btnVerTodo}>
+              ir a supermercado
+           </Link>
+        </div>
+     
       </ul>
-      <Link to="/SuperMercado">ir a supermercado</Link>
     </div>
   )
 }
