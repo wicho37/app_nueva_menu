@@ -6,6 +6,7 @@ import ItemDetail from "./components/itemDetail/ItemDEtail.tsx";
 import ItemDetailSuperm from "./components/itemDetailSuperMer/ItemDetailSuperMer.tsx";
 import MenuCompleto from "./components/CartaMenuCompleto/CartaMenuCompleto.tsx";
 import Header from "./components/header/Header.tsx";
+import { CartProvider } from "./context/CartContext.tsx";
 
 
 
@@ -15,8 +16,9 @@ const App = () => {
   
 
   return (
-    <BrowserRouter>
-       <Routes>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
           <Route path="/Header" element={<Header/>}></Route>
           <Route path="/" element={<AppMutual />} />
           <Route path="/AppMutual" element={<AppMutual />} />
@@ -25,9 +27,9 @@ const App = () => {
           <Route path="/item/:id" element={<ItemDetail/>}/>
           <Route path="/product/:id" element={<ItemDetailSuperm/>}/>
           <Route path="/SuperMercado" element={<SuperMercado />}/>
-       </Routes>
-    </BrowserRouter>
-   
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 };
 

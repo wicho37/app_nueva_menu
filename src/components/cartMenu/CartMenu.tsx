@@ -35,6 +35,7 @@ const CartMenu = () => {
                   precio: ${menuItem.price}
                 </div>
               </Link>
+              <button>añadir al carrito</button>
             </li>
           ))
         }

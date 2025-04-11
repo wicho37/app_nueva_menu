@@ -2,6 +2,7 @@ import style from "./Menu.module.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoRest from "../../assets/img/restaurante.png"
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 
  const Menulist = () => {
@@ -11,6 +12,10 @@ import logoRest from "../../assets/img/restaurante.png"
     <nav className={style.navbar}>
       <img src={logoRest} alt="" className={style.img}/>
       <div className={style.logo}>Mi Tienda</div>
+
+      <div>
+          <ShoppingCart />
+        </div>
 
       {/* Botón de menú hamburguesa */}
       <button className={style.menuButton} onClick={() => setIsOpen(!isOpen)}>
