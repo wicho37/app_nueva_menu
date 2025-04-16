@@ -1,28 +1,38 @@
-import { createContext } from "react"
-import { useState } from "react";
+
+import { createContext, useContext, useState } from "react";
 
 
+export const CartContext = createContext();
 
-
-export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-    const [carrito, setCarrito] = useState([]);
+  const [carrito, setCarrito] = useState([]);
+  console.log(carrito)
 
-    const agregarAlCarrito = (producto) => {
-        setCarrito([...carrito, producto]);
-      };
+  const agregarAlCarrito = (item) => {
+    setCarrito([...carrito, item]);
+  };
 
+  const eliminarDelCarrito = (id) => {
+    setCarrito(carrito.filter((item) => item.id !== id));
+  };
 
-   return(
-    <CartContext.Provider value={{
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{ 
         carrito,
-        agregarAlCarrito
-    }} >
-        {children}
+        agregarAlCarrito,
+        eliminarDelCarrito,
+        vaciarCarrito
+     }}>
+       {children}
     </CartContext.Provider>
-   )
-}
+  );
+};
 
 // Hook personalizado para usar el contexto
-//export const useCart = () => useContext(CartContext);
+export const useCart = () => useContext(CartContext);

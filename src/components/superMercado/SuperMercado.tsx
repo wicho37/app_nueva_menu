@@ -3,10 +3,13 @@ import style from "../cartMenu/CartMenu.module.css"
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
+import { useCart } from "../../context/CartContext";
+
 
 
 
 function SuperMercado() {
+  const {agregarAlCarrito, carrito} = useCart()
   const [data, setData] = useState([])
   console.log(data)
   // Categorías únicas del menú
@@ -99,7 +102,9 @@ function SuperMercado() {
                   <strong>{shortDescription}</strong>
                   <p>precio: {item.price}</p>
                 </Link>
-                <button>añadir al carrito</button>
+                <button onClick={() => agregarAlCarrito(item)}>
+                   añadir al carrito
+                </button>
               </li>
               )
            })}

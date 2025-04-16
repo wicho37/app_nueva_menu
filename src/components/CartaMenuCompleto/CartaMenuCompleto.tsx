@@ -3,9 +3,13 @@ import { menu } from "../../assets/MOCK_DATA/dataMenu";
 import style from "../cartMenu/CartMenu.module.css";
 import GoShopping from "../goShopping/GoShopping";
 import Header from "../header/Header";
-import { useState } from "react";
+import { useState} from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 function MenuCompleto() {
+  const { agregarAlCarrito,carrito } = useContext(CartContext)
+
   const [filtros, setFiltros] = useState({
     categoria: "todas",
     precioMinimo: 0
@@ -68,7 +72,7 @@ function MenuCompleto() {
               <p>{menuItem.description}</p>
               <p>Precio: ${menuItem.price}</p>
               </Link>
-              <button>añadir al carrito</button>
+              <button onClick={() => agregarAlCarrito(menuItem)}>añadir al carrito</button>
 
             </li>
           ))}

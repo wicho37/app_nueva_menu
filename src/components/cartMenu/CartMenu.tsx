@@ -3,11 +3,14 @@ import { menu } from "../../assets/MOCK_DATA/dataMenu"
 import style from "./CartMenu.module.css"
 import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 
 
 const CartMenu = () => {
+   const {agregarAlCarrito} = useContext(CartContext)
 
 
   return (
@@ -35,7 +38,7 @@ const CartMenu = () => {
                   precio: ${menuItem.price}
                 </div>
               </Link>
-              <button>añadir al carrito</button>
+              <button onClick={() => agregarAlCarrito(menuItem)}>añadir al carrito</button>
             </li>
           ))
         }

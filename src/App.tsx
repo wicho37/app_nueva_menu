@@ -7,6 +7,7 @@ import ItemDetailSuperm from "./components/itemDetailSuperMer/ItemDetailSuperMer
 import MenuCompleto from "./components/CartaMenuCompleto/CartaMenuCompleto.tsx";
 import Header from "./components/header/Header.tsx";
 import { CartProvider } from "./context/CartContext.tsx";
+import CartView from "./components/cartView/CartView.tsx";
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/item/:id" element={<ItemDetail/>}/>
           <Route path="/product/:id" element={<ItemDetailSuperm/>}/>
           <Route path="/SuperMercado" element={<SuperMercado />}/>
+          <Route path="/cart" element={<CartView />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
