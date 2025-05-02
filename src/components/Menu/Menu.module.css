@@ -11,6 +11,11 @@
   }
   .navbar .img{
     width: 55px;
+    border-radius: 75px 75px 10px 10px;
+    border: solid;
+  }
+  .shoppingCart{
+    width: 25px;
   }
   
   /* Logo */

@@ -1,0 +1,23 @@
+.contentFooter{
+    display: block;
+    margin: 10px;
+    height: 700px;
+    
+}
+.contentFooter div{
+    margin: 8px;
+}
+.logoRestaurante{
+    border: solid;
+    border-radius: 75px 75px 10px 10px;
+    width: 110px;
+}
+.listfooter{
+    gap: 10px;
+}
+ul{
+    list-style: none;
+}
+h2{
+    margin: 60px 0 0 0;
+}

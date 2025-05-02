@@ -13,9 +13,9 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
       <img src={logoRest} alt="" className={style.img}/>
       <div className={style.logo}>Mi Tienda</div>
 
-      <div>
+      <div className={style.shoppingCart}>
           <ShoppingCart />
-        </div>
+      </div>
 
       {/* Botón de menú hamburguesa */}
       <button className={style.menuButton} onClick={() => setIsOpen(!isOpen)}>

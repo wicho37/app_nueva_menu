@@ -2,11 +2,17 @@ import { useParams, Link } from "react-router-dom";
 import { menu } from "../../assets/MOCK_DATA/dataMenu";
 import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
+
 
 const ItemDetail = () => {
+    const {agregarAlCarrito} = useContext (CartContext)
   const { id } = useParams(); // Obtiene el ID de la URL
   const data = menu.find((item) => item.id === parseInt(id)); // Busca el producto por ID
+  
 
+ 
 
   return (
     <div>
@@ -18,10 +24,10 @@ const ItemDetail = () => {
       <h1>{data.name}</h1>
       <p>{data.description}</p>
       <p>Precio: ${data.price}</p>
-      <button>añadir al carrito</button>
-      <Link to="/CartMenu">
-        <button>Volver</button>
-      </Link>
+      <button onClick={() => agregarAlCarrito(data)}>añadir al carrito</button>
+      
+      <Link to="/CartMenu"><button >Volver</button> </Link>
+
     </div>
   );
 };

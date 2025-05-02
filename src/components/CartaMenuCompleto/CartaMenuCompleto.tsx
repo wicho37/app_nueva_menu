@@ -6,6 +6,7 @@ import Header from "../header/Header";
 import { useState} from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import Footer from "../footer/Footer";
 
 function MenuCompleto() {
   const { agregarAlCarrito,carrito } = useContext(CartContext)
@@ -73,10 +74,13 @@ function MenuCompleto() {
               <p>Precio: ${menuItem.price}</p>
               </Link>
               <button onClick={() => agregarAlCarrito(menuItem)}>añadir al carrito</button>
-
             </li>
           ))}
+          <div>
+            <Footer />
+          </div>
         </ul>
+        
       </div>
 
       <Link to="/cartmenu">Volver</Link>

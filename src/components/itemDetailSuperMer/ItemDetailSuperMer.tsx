@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
+import { CartContext } from "../../context/CartContext";
 
 function ItemDetailSuperm() {
+  const {agregarAlCarrito} = useContext (CartContext)
   const { id } = useParams(); // Obtiene el ID de la URL
   const [product, setProduct] = useState([]);
   console.log(product)
@@ -30,7 +32,7 @@ function ItemDetailSuperm() {
       <p>{product.title}</p>
       <p>{product.description}</p>
       <p>{product.category}</p>
-      <button>añadir al carrito</button>
+      <button onClick={() => agregarAlCarrito(product)}>agregar al carrito</button>
       <Link to="/supermercado">
         <button>Volver</button>
       </Link>

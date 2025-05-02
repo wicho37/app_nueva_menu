@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
 import { useCart } from "../../context/CartContext";
+import Footer from "../footer/Footer";
 
 
 
@@ -33,7 +34,7 @@ function SuperMercado() {
   
     // Aplicar filtros al menú
     const productosFiltrados = data.filter(item =>
-      item.price >= filtros.precioMinimo &&
+     /*  item.price >= filtros.precioMinimo && */
       (filtros.categoria === "todas" || item.category === filtros.categoria) &&
       item.title.toLowerCase().includes(busqueda.toLowerCase())
     );
@@ -47,7 +48,7 @@ function SuperMercado() {
       </Link>
       
       <div>
-        {/*        slice(0, 10) solo mustra los primeros diez productos del listado */}
+        {/* slice(0, 10) solo mustra los primeros diez productos del listado */}
         <ul>
           <h2>SuperMercado</h2>
           <div className={style.labels}>
@@ -77,7 +78,7 @@ function SuperMercado() {
               />
             </label>
 
-            <label>
+            {/* <label>
               Precio a partir de:
               <input
                 type="text"
@@ -86,7 +87,7 @@ function SuperMercado() {
                   setFiltros({ ...filtros, precioMinimo: Number(e.target.value) })
                 }
               />
-            </label>
+            </label> */}
           </div>
           {
             productosFiltrados.slice(0, 10).map((item) => {
@@ -108,6 +109,9 @@ function SuperMercado() {
               </li>
               )
            })}
+           <div>
+            <Footer />
+           </div>
         </ul>
       </div>
       <Link to="/CartMenu">volver</Link>

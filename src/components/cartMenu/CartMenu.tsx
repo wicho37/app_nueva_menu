@@ -5,12 +5,15 @@ import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import Footer from "../footer/Footer";
+
 
 
 
 
 const CartMenu = () => {
-   const {agregarAlCarrito} = useContext(CartContext)
+  
+   const {agregarAlCarrito, carrito} = useContext(CartContext)
 
 
   return (
@@ -39,6 +42,7 @@ const CartMenu = () => {
                 </div>
               </Link>
               <button onClick={() => agregarAlCarrito(menuItem)}>añadir al carrito</button>
+              
             </li>
           ))
         }
@@ -52,7 +56,9 @@ const CartMenu = () => {
               ir a supermercado
            </Link>
         </div>
-     
+        <div>
+          <Footer />
+        </div>
       </ul>
     </div>
   )

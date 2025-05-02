@@ -1,12 +1,13 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import style from "./CartView.module.css"
+import BotonCantidad from "../itemCounter/ItemCounter"
 
 
 
 
 const CartView = () => {
-    const {carrito, vaciarCarrito, eliminarDelCarrito} = useContext(CartContext)
+    const {carrito, vaciarCarrito, eliminarDelCarrito, totalCompra} = useContext(CartContext)
 
     return (
         < div className={style.contentCart}>
@@ -14,10 +15,12 @@ const CartView = () => {
             <div>
                 {
                     carrito.map((prod) => (
-                        <li>
+                        <li key={prod.id}>
                             <h6>{prod.name}</h6>
                             <img src={prod.image} alt="" />
-                            <p>precio: ${prod.price}</p>
+                            <p>precio unidad: ${prod.price}</p>
+                            <p>Cantidad: {prod.cantidad}</p> {/* << Aquí ves cuántas cantidades hay */}
+                            <BotonCantidad id={prod.id} cantidad={prod.cantidad} />
                             <p>{prod.description}</p>
                             <button onClick={() => eliminarDelCarrito(prod.id)}>Eliminar</button>
 
@@ -26,6 +29,7 @@ const CartView = () => {
                 }
             </div>
              <div>
+             <h4 className={style.compra}>Total Compra: ${totalCompra()}</h4>
                 <button onClick={vaciarCarrito}>Vaciar Carrito</button>
             </div>
         </div>

@@ -8,6 +8,7 @@ import MenuCompleto from "./components/CartaMenuCompleto/CartaMenuCompleto.tsx";
 import Header from "./components/header/Header.tsx";
 import { CartProvider } from "./context/CartContext.tsx";
 import CartView from "./components/cartView/CartView.tsx";
+import Footer from "./components/footer/Footer.tsx";
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/product/:id" element={<ItemDetailSuperm/>}/>
           <Route path="/SuperMercado" element={<SuperMercado />}/>
           <Route path="/cart" element={<CartView />} />
+          <Route path="/Footer" element={<Footer />}></Route>
         </Routes>
       </BrowserRouter>
     </CartProvider>

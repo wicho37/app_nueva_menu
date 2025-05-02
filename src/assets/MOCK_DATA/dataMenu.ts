@@ -125,6 +125,7 @@ export const menu  =
     category: "Mexicana",
     description: "Tortillas de maíz con carne de cerdo marinada, piña, cebolla y cilantro.",
     price: 9.00,
+    cantidad: 1,
     image: "/src/assets/img/tacos al pastor.png",
   },
   {
@@ -133,6 +134,7 @@ export const menu  =
     category: "Japonesa",
     description: "Arroz, alga nori, cangrejo, aguacate y pepino, acompañado de salsa de soya.",
     price: 14.50,
+    cantidad: 1,
     image: "/src/assets/img/sushi.png",
   },
   {
@@ -149,6 +151,7 @@ export const menu  =
     category: "Carnes",
     description: "Corte de carne asada a la parrilla con papas fritas y chimichurri.",
     price: 18.00,
+    cantidad: 1,
     image: "/src/assets/img/churrasco.png",
   },
   {
@@ -165,6 +168,7 @@ export const menu  =
     category: "Comida Rápida",
     description: "Jugosa hamburguesa con carne 100% de res, lechuga, tomate y queso cheddar.",
     price: 8.99,
+    cantidad: 1,
     image: "/src/assets/img/hamburguesa.png",
   },
   {
@@ -181,6 +185,7 @@ export const menu  =
     category: "Ensaladas",
     description: "Lechuga romana, crutones, queso parmesano y aderezo César.",
     price: 7.50,
+    cantidad: 1,
     image: "/src/assets/img/salad.jpg",
   }
 
