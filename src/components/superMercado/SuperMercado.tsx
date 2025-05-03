@@ -52,7 +52,7 @@ function SuperMercado() {
         <ul>
           <h2>SuperMercado</h2>
           <div className={style.labels}>
-          <label>
+          <label className={style.filterSM}>
               Categoría:
               <select
                 value={filtros.categoria}
@@ -109,12 +109,13 @@ function SuperMercado() {
               </li>
               )
            })}
+           <Link to="/CartMenu" className={style.volver}>volver</Link>
            <div>
             <Footer />
            </div>
         </ul>
       </div>
-      <Link to="/CartMenu">volver</Link>
+      
     </div>
   )
 }

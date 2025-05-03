@@ -6,6 +6,7 @@ import GoShopping from "../goShopping/GoShopping";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import Footer from "../footer/Footer";
+import RedesSociales from "../redesSociales/RedesSociales";
 
 
 
@@ -21,6 +22,7 @@ const CartMenu = () => {
       <Header />
       <Link to="/SuperMercado">
         <GoShopping />
+        <RedesSociales />
       </Link>
       <ul>
         <h4>menu diario</h4>
