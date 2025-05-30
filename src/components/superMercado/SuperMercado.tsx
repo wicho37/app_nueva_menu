@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import style from "../cartMenu/CartMenu.module.css"
 import { Link } from "react-router-dom";
-import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
 import { useCart } from "../../context/CartContext";
-import Footer from "../footer/Footer";
+import Layout from "../Layout/Layout";
+import Header from "../header/Header";
 
 
 
@@ -110,9 +110,7 @@ function SuperMercado() {
               )
            })}
            <Link to="/CartMenu" className={style.volver}>volver</Link>
-           <div>
-            <Footer />
-           </div>
+           
         </ul>
       </div>
       

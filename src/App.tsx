@@ -2,13 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CartMenu from "./components/cartMenu/CartMenu.tsx"
 import AppMutual from "./components/appMutual/AppMutual.tsx"
 import SuperMercado from "./components/superMercado/SuperMercado.tsx";
-import ItemDetail from "./components/itemDetail/ItemDEtail.tsx";
 import ItemDetailSuperm from "./components/itemDetailSuperMer/ItemDetailSuperMer.tsx";
 import MenuCompleto from "./components/CartaMenuCompleto/CartaMenuCompleto.tsx";
-import Header from "./components/header/Header.tsx";
 import { CartProvider } from "./context/CartContext.tsx";
 import CartView from "./components/cartView/CartView.tsx";
 import Footer from "./components/footer/Footer.tsx";
+import ItemDetail from "./components/itemDetail/ItemDetail.tsx";
+import Layout from "./components/Layout/Layout.tsx";
+
 
 
 
@@ -21,7 +22,7 @@ const App = () => {
     <CartProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/Header" element={<Header/>}></Route>
+          <Route element={<Layout />} />
           <Route path="/" element={<AppMutual />} />
           <Route path="/AppMutual" element={<AppMutual />} />
           <Route path="/CartMenu" element={<CartMenu />} />

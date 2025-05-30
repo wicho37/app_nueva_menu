@@ -1,3 +1,4 @@
+import React from "react"
 import Menulist from "../Menu/Menulist"
 import style from "./Header.module.css"
 
@@ -15,7 +16,7 @@ const Header = () => {
   )
 }
 
-export default Header
+export default React.memo (Header)
 
 
 
