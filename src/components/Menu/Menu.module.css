@@ -46,7 +46,32 @@
     text-decoration: none;
     padding: 10px;
   }
+   li:hover{
+   background-color:white; 
+   opacity: 0.9;
+  }
+
+  .Menulis{
+    padding: 0;
+    margin: 0;
+    background: #222;
+    }
+    .Menulis .itemLink{
+    margin: 10px 0;
+    
+    }
+     
   
+
+
+
+
+
+
+
+
+
+
   /* Responsividad */
   @media (max-width: 768px) {
     .menuButton {
@@ -58,15 +83,16 @@
       flex-direction: column;
       background: #222;
       position: absolute;
-      top: 100px;
+      top: 110px;
       right: 0;
-      width: 130px;
-      padding: 13px;
-      margin-right: 8px;
+      width: 95px;
+      padding: 35px;
+      margin-right: 20px;
     }
   
     .navLinks.show {
       display: flex;
     }
+    
   }
   

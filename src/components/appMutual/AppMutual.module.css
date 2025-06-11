@@ -3,7 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 694px;
+    height: 597px;
 }
 .botonPpal{
     font-size: 36px;
@@ -14,8 +14,13 @@
     padding: 12px 40px;
     cursor: pointer;
 }
+.botonPpal:hover{
+    background-color: cadetblue;
+}
 .boton{
     margin-top: 200px;
     position: absolute;
     
 }
+
+

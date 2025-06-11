@@ -7,10 +7,9 @@ const Footer = () => {
     <div className={style.contentFooter}>
         <div>
             <img src={logoRestaurante} alt="" className={style.logoRestaurante} />
-        </div>
-        <div>
-          <div className={style.listFooter}>
-              <ul>
+          </div>  
+          <div>
+              <ul className={style.listFooter}>
                   <h2>conocenos</h2>
                   <li>
                       <p>carta del restaurante</p>
@@ -22,8 +21,8 @@ const Footer = () => {
               </ul>
           </div>
 
-          <div className={style.redesSocial}>
-              <ul>
+          <div>
+              <ul className={style.listFooter}>
                   <h2>redes sociales</h2>
                  <li>
                     <p>instagram</p>
@@ -33,8 +32,8 @@ const Footer = () => {
               </ul>
           </div>
         
-          <div className={style.cuenta}>
-              <ul>
+          <div>
+              <ul className={style.listFooter}>
                 <h2>mi cuenta</h2>
                 <li>
                   <p>pedir</p>
@@ -45,9 +44,9 @@ const Footer = () => {
           <div className={style.autor}>
             <p>powered by wicho</p>
           </div>
-        </div>
-        
     </div>
+        
+  
   )
 }
 

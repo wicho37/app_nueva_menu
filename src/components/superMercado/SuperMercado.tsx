@@ -3,14 +3,13 @@ import style from "../cartMenu/CartMenu.module.css"
 import { Link } from "react-router-dom";
 import GoShopping from "../goShopping/GoShopping";
 import { useCart } from "../../context/CartContext";
-import Layout from "../Layout/Layout";
-import Header from "../header/Header";
+import styles from "./SuperMercado.module.css"
 
 
 
 
 function SuperMercado() {
-  const {agregarAlCarrito, carrito} = useCart()
+  const { agregarAlCarrito, carrito } = useCart()
   const [data, setData] = useState([])
   console.log(data)
   // Categorías únicas del menú
@@ -18,7 +17,7 @@ function SuperMercado() {
 
   const [busqueda, setBusqueda] = useState("");
 
-  
+
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -28,31 +27,30 @@ function SuperMercado() {
   }, [])
 
   const [filtros, setFiltros] = useState({
-      categoria: "todas",
-      precioMinimo: 0
-    });
-  
-    // Aplicar filtros al menú
-    const productosFiltrados = data.filter(item =>
-     /*  item.price >= filtros.precioMinimo && */
-      (filtros.categoria === "todas" || item.category === filtros.categoria) &&
-      item.title.toLowerCase().includes(busqueda.toLowerCase())
-    );
+    categoria: "todas",
+    precioMinimo: 0
+  });
+
+  // Aplicar filtros al menú
+  const productosFiltrados = data.filter(item =>
+    /*  item.price >= filtros.precioMinimo && */
+    (filtros.categoria === "todas" || item.category === filtros.categoria) &&
+    item.title.toLowerCase().includes(busqueda.toLowerCase())
+  );
 
 
   return (
     <div>
-      <Header />
       <Link to="/SuperMercado">
         <GoShopping />
       </Link>
-      
+
       <div>
         {/* slice(0, 10) solo mustra los primeros diez productos del listado */}
-        <ul>
-          <h2>SuperMercado</h2>
-          <div className={style.labels}>
-          <label className={style.filterSM}>
+        <ul className={style.containerSupermer}>
+          <h2 className={styles.titlePpal}>SuperMercado</h2>
+          <div className={styles.labels}>
+            <label className={style.filterSM}>
               Categoría:
               <select
                 value={filtros.categoria}
@@ -60,7 +58,7 @@ function SuperMercado() {
                   setFiltros({ ...filtros, categoria: e.target.value })
                 }
               >
-                 {categorias.map((categoria, index) => (
+                {categorias.map((categoria, index) => (
                   <option key={index} value={categoria}>
                     {categoria}
                   </option>
@@ -71,10 +69,10 @@ function SuperMercado() {
             <label>
               Buscar por nombre:
               <input
-              type="text"
-              value={busqueda}
-              onChange={(e) => setBusqueda(e.target.value)}
-              placeholder="Ej: camiseta, joya, etc."
+                type="text"
+                value={busqueda}
+                onChange={(e) => setBusqueda(e.target.value)}
+                placeholder="Ej: camiseta, joya, etc."
               />
             </label>
 
@@ -91,29 +89,29 @@ function SuperMercado() {
           </div>
           {
             productosFiltrados.slice(0, 10).map((item) => {
-              
+
               const shortDescription = item.description.split(".")[0] + "."; // Mostrar solo el primer párrafo
               const shortTitle = item.title.split(".")[0] + ".";
-              return(
-              <li key={item.id} className={style.Cart}>
-                <Link to={`/product/${item.id}`}>
-                  <img src={item.image} alt={item.title} width={100} />
-                  <p>{shortTitle}</p>
-                  <p>{item.category}</p>
-                  <strong>{shortDescription}</strong>
-                  <p>precio: {item.price}</p>
-                </Link>
-                <button onClick={() => agregarAlCarrito(item)}>
-                   añadir al carrito
-                </button>
-              </li>
+              return (
+                <li key={item.id} className={style.Cart}>
+                  <Link to={`/product/${item.id}`}>
+                    <img src={item.image} alt={item.title} width={100} />
+                    <p>{shortTitle}</p>
+                    <p>{item.category}</p>
+                    <strong>{shortDescription}</strong>
+                    <p>precio: {item.price}</p>
+                  </Link>
+                  <button onClick={() => agregarAlCarrito(item)}>
+                    añadir al carrito
+                  </button>
+                </li>
               )
-           })}
-           <Link to="/CartMenu" className={style.volver}>volver</Link>
-           
+            })}
+            <div className={styles.volver}>
+              <Link to="/CartMenu" className={styles.volver2}>volver</Link>
+            </div>
         </ul>
       </div>
-      
     </div>
   )
 }

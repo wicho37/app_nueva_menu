@@ -15,7 +15,7 @@
     margin: 0;
     background-color: bisque;
     margin-left: -8px;
-    margin-top: -19.5px;
+    margin-top: -58.5px;
     margin-right: -7px;
    }
    div ul h4{
@@ -43,10 +43,7 @@
   .textPpal{
     text-decoration: none;
   }
-  .labels{
-    display: flex;
-    gap: 30px;
-  }
+ 
   
    
    

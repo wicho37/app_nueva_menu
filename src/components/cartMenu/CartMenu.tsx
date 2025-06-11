@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { menu } from "../../assets/MOCK_DATA/dataMenu"
 import style from "./CartMenu.module.css"
-import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import Footer from "../footer/Footer";
-import RedesSociales from "../redesSociales/RedesSociales";
 
 
 
@@ -19,10 +16,8 @@ const CartMenu = () => {
 
   return (
     <div>
-      <Header />
       <Link to="/SuperMercado">
         <GoShopping />
-        <RedesSociales />
       </Link>
       <ul>
         <h4>menu diario</h4>
@@ -57,9 +52,6 @@ const CartMenu = () => {
            <Link to="/SuperMercado" className={style.btnVerTodo}>
               ir a supermercado
            </Link>
-        </div>
-        <div>
-          <Footer />
         </div>
       </ul>
     </div>

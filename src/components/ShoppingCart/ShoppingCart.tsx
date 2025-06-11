@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   const {totalCantidad} = useContext(CartContext)
 
   return (
-    <Link to="/cart" >
+    <Link to="/Cart">
       <img src={shoppingCart} className={estilo.shoppingCart} alt="" />
       <span>{totalCantidad()}</span>
     </Link>

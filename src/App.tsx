@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useLocation, Routes, Route } from "react-router-dom"
 import CartMenu from "./components/cartMenu/CartMenu.tsx"
 import AppMutual from "./components/appMutual/AppMutual.tsx"
 import SuperMercado from "./components/superMercado/SuperMercado.tsx";
@@ -6,34 +6,36 @@ import ItemDetailSuperm from "./components/itemDetailSuperMer/ItemDetailSuperMer
 import MenuCompleto from "./components/CartaMenuCompleto/CartaMenuCompleto.tsx";
 import { CartProvider } from "./context/CartContext.tsx";
 import CartView from "./components/cartView/CartView.tsx";
-import Footer from "./components/footer/Footer.tsx";
 import ItemDetail from "./components/itemDetail/ItemDetail.tsx";
-import Layout from "./components/Layout/Layout.tsx";
+import Header from "./components/header/Header.tsx";
+import Footer from "./components/footer/Footer.tsx";
+import Menulist from "./components/Menu/Menulist.tsx";
 
 
 
 
 
 const App = () => {
-  
-  
+  const location = useLocation();
+  const noMostrarHeader = location.pathname === "/";
+
 
   return (
     <CartProvider>
-      <BrowserRouter>
+       {!noMostrarHeader && <Header />}
+       {!noMostrarHeader && <Menulist />}
         <Routes>
-          <Route element={<Layout />} />
           <Route path="/" element={<AppMutual />} />
           <Route path="/AppMutual" element={<AppMutual />} />
           <Route path="/CartMenu" element={<CartMenu />} />
           <Route path="/menu-completo" element={<MenuCompleto />} />
-          <Route path="/item/:id" element={<ItemDetail/>}/>
-          <Route path="/product/:id" element={<ItemDetailSuperm/>}/>
-          <Route path="/SuperMercado" element={<SuperMercado />}/>
+          <Route path="/item/:id" element={<ItemDetail />} />
+          <Route path="/product/:id" element={<ItemDetailSuperm />} />
+          <Route path="/SuperMercado" element={<SuperMercado />} />
           <Route path="/cart" element={<CartView />} />
-          <Route path="/Footer" element={<Footer />}></Route>
         </Routes>
-      </BrowserRouter>
+      
+      {!noMostrarHeader && <Footer />}
     </CartProvider>
   );
 };

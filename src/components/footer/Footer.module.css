@@ -1,16 +1,16 @@
 .contentFooter{
-    display: block;
-    margin: 10px;
-    height: 710px;
-    
-}
-.contentFooter div{
-    margin-left: 12px ;
+    background-color: bisque;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 0 22px;
+    margin-top: -1px;
+
 }
 .logoRestaurante{
     border: solid;
     border-radius: 75px 75px 10px 10px;
     width: 110px;
+    margin: 40px 15px 0;
 }
 .listfooter{
     gap: 10px;
@@ -24,4 +24,8 @@ h2{
 .autor{
     font-size: 19px;
     text-align: center;
+    margin: 0;
+}
+.listFooter{
+    margin: 12px;
 }
