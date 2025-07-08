@@ -18,9 +18,20 @@
     background-color: cadetblue;
 }
 .boton{
-    margin-top: 200px;
+    margin-top: 310px;
     position: absolute;
-    
+        width: 100%;
+    text-align: center;
+
+}
+
+
+@media (max-width:375px) {
+.boton{
+    width: 100%;
+    text-align: center;
+    margin-top: 343px;
+    }
 }
 
 

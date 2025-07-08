@@ -10,24 +10,32 @@
     display: flex;
     gap: 203px;
    }
+   
    div ul{
     padding: 0;
-    margin: 0;
     background-color: bisque;
     margin-left: -8px;
-    margin-top: -58.5px;
+    margin-top: -34.5px;
     margin-right: -7px;
    }
-   div ul h4{
+   div h4{
+      background-color: bisque;
     text-align: center;
-    margin-top: 0px;
-    padding-top: 29px;
-    font-size: 29px;
+    margin: 26px -8px -57px -8px;;
+    padding: 46px;
+    font-size: 42px;
    }
    .btnContainer {
     text-align: center;
     margin-top: 70px;
     padding-bottom: 50px;
+  }
+  .btnContainer1{
+    background-color: bisque;
+    padding: 1px;
+    margin-top: -57px;
+    margin-left: -8px;
+    margin-right: -8px;
   }
   .btnVerTodo {
     background-color: #ff5733;
@@ -37,13 +45,34 @@
     border-radius: 5px;
     font-weight: bold;
   }
-  .btnVerTodo:hover {
+  .btnVerTodo:hover, .return:hover {
     background-color: #c4411f;
   }
   .textPpal{
     text-decoration: none;
   }
+  h1{
+    text-align: center;
+    padding: 38px;
+  }
+  .labels{
+    display: flex;
+    text-align: center;
+  }
+  .return{
+    background-color: #ff5733;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 144px;
+    text-decoration: none;
+  }
  
-  
+  @media (min-width:1200px) {
+    div ul{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
    
    

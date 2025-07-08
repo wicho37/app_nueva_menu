@@ -10,6 +10,7 @@ import ItemDetail from "./components/itemDetail/ItemDetail.tsx";
 import Header from "./components/header/Header.tsx";
 import Footer from "./components/footer/Footer.tsx";
 import Menulist from "./components/Menu/Menulist.tsx";
+import SupermercadoCompleto from "./components/superMercado/SupermercadoCompleto.tsx";
 
 
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/item/:id" element={<ItemDetail />} />
           <Route path="/product/:id" element={<ItemDetailSuperm />} />
           <Route path="/SuperMercado" element={<SuperMercado />} />
+          <Route path="/SupermercadoCompleto" element={<SupermercadoCompleto />} />
           <Route path="/cart" element={<CartView />} />
         </Routes>
       

@@ -5,6 +5,7 @@ import style from "./Footer.module.css"
 const Footer = () => {
   return (
     <div className={style.contentFooter}>
+      <div className={style.containerFooter}>
         <div>
             <img src={logoRestaurante} alt="" className={style.logoRestaurante} />
           </div>  
@@ -41,9 +42,10 @@ const Footer = () => {
                 </li>
               </ul>
           </div>
-          <div className={style.autor}>
-            <p>powered by wicho</p>
-          </div>
+      </div>
+      <div className={style.autor}>
+        <p>powered by wicho</p>
+      </div>
     </div>
         
   

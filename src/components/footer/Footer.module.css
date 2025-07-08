@@ -12,9 +12,6 @@
     width: 110px;
     margin: 40px 15px 0;
 }
-.listfooter{
-    gap: 10px;
-}
 ul{
     list-style: none;
 }
@@ -28,4 +25,21 @@ h2{
 }
 .listFooter{
     margin: 12px;
+}
+
+
+@media (min-width: 1200px){
+   .contentFooter div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   }
+   .listFooter{
+    display: block;
+   }
+   .logoRestaurante{
+    margin: 85px;
+   }
+       
+
 }

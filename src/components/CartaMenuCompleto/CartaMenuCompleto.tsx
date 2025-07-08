@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { menu } from "../../assets/MOCK_DATA/dataMenu";
 import style from "../cartMenu/CartMenu.module.css";
 import GoShopping from "../goShopping/GoShopping";
-import Header from "../header/Header";
 import { useState} from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import Footer from "../footer/Footer";
 
 function MenuCompleto() {
   const { agregarAlCarrito,carrito } = useContext(CartContext)
@@ -27,10 +25,10 @@ function MenuCompleto() {
 
   return (
     <div>
-      <Header />
-      <Link to="/SuperMercado">
+      
+     {/*  <Link to="/SuperMercado">
         <GoShopping />
-      </Link>
+      </Link> */}
 
       <div>
         {/* Lista filtrada */}
@@ -76,14 +74,11 @@ function MenuCompleto() {
               <button onClick={() => agregarAlCarrito(menuItem)}>añadir al carrito</button>
             </li>
           ))}
-          <div>
-            <Footer />
-          </div>
+          <Link to="/cartmenu" className={style.return}>Volver</Link>
         </ul>
         
       </div>
-
-      <Link to="/cartmenu">Volver</Link>
+      
     </div>
   );
 };

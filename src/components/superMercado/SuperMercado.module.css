@@ -1,3 +1,9 @@
+#root div{
+        background-color: bisque;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -35px;
+}
 .volver{
     background-color: #ff5733;
     padding: 10px 20px;
@@ -14,12 +20,42 @@
     text-align: center;
     padding: 31px;
     border-bottom: double;
+    font-size: 36px;
 }
 div ul .labels{
     text-align: start;
-    margin-left: 14px;
+    margin-left: 20px;
     margin-top: 20px;
     display: flex;
     gap: 30px;
+     font-size: 22px;
+}
+ 
+
+@media (min-width: 1200px) {
+    
+   div ul .labels{
+       font-size: 40px;
+       margin-left: 60px;
+    }
+   input{
+        font-size: 28px;
+    }
+   select {
+    font-size: 28px;
+   } 
+   .titlePpal{
+    font-size: 50px;
+   }
+  div ul div{
+        width: 360px;
+  }
+  .listSuperMerc{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  list-style: none
+  }
 }
 

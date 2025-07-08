@@ -13,7 +13,7 @@ const Header = () => {
         <div>
           <Menulist />
         </div>
-        <div>
+        <div className={style.social}>
           <RedesSociales />
         </div>
       </div>

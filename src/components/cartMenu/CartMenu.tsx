@@ -16,11 +16,11 @@ const CartMenu = () => {
 
   return (
     <div>
-      <Link to="/SuperMercado">
+     {/*  <Link to="/SuperMercado">
         <GoShopping />
-      </Link>
+      </Link> */}
+      <h4>menu diario</h4>
       <ul>
-        <h4>menu diario</h4>
         {
           menu?.slice(0, 4).map((menuItem) => (
             <li key={menuItem.id} className={style.Cart}>
@@ -43,17 +43,19 @@ const CartMenu = () => {
             </li>
           ))
         }
-        <div className={style.btnContainer}>
-          <Link to="/menu-completo" className={style.btnVerTodo}>
-            Ver Todo el Menú
-          </Link>
-        </div>
-        <div className={style.btnContainer}>
-           <Link to="/SuperMercado" className={style.btnVerTodo}>
-              ir a supermercado
-           </Link>
-        </div>
       </ul>
+      <div className={style.btnContainer1}>
+          <div className={style.btnContainer}>
+            <Link to="/menu-completo" className={style.btnVerTodo}>
+              Ver Todo el Menú
+            </Link>
+          </div>
+          <div className={style.btnContainer}>
+            <Link to="/SuperMercado" className={style.btnVerTodo}>
+              ir a supermercado
+            </Link>
+          </div>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import { menu } from "../../assets/MOCK_DATA/dataMenu";
-import Header from "../header/Header";
 import GoShopping from "../goShopping/GoShopping";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
@@ -16,7 +15,6 @@ const ItemDetail = () => {
 
   return (
     <div>
-      <Header />
       <Link to="/SuperMercado">
         <GoShopping />
       </Link>
